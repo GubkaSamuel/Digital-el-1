@@ -1,6 +1,5 @@
 # Lab 2: INSERT_YOUR_FIRSTNAME INSERT_YOUR_LASTNAME
 Samuel Gubi
-
 ### Pre-Lab preparation
   | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **B is less than A** |
    | :-: | :-: | :-: | :-: | :-: | :-: |
