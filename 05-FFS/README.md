@@ -2,47 +2,40 @@
 
 ## Pre-Lab preparation
 
-1. Write characteristic equations and complete truth tables for D, JK, T flip-flops where `q(n)` represents main output value before the clock edge and `q(n+1)` represents output value after the clock edge.
+1. Write characteristic equations and complete truth tables for D, JK, T flip-flops where `q(n)` represents main output value before the clock edge and `q(n+1)` represents output value after the clock edge.   
 
-   ![Characteristic equations](images/eq_flip_flops.png)
-<!--
-https://editor.codecogs.com/
-\begin{align*}
-    q_{n+1}^D =&~D \\
-    q_{n+1}^{JK} =& \\
-    q_{n+1}^T =& \\
-\end{align*}
--->
+![Characteristic equations](./rovnice_de1.png)
 
    **D-type FF**
    | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | `q(n+1)` has the same level as `d` |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 |  |  |
-   | ![rising](images/eq_uparrow.png) | 1 |  |  |  |
-   | ![rising](images/eq_uparrow.png) | 1 |  |  |  |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 0 | 0 | `q(n+1)` has the same level as `d` |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 1 | 0 | `q(n+1)` has the same level as `d` |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 0 | 1 | `q(n+1)` has the same level as `d` |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 1 | 1 | `q(n+1)` has the same level as `d` |
 
-**JK-type FF**
+   **JK-type FF**
    | **clk** | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | 0 | Output did not change |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 1 | 1 | Output did not change |
-   | ![rising](images/eq_uparrow.png) | 0 |  |  |  |  |
-   | ![rising](images/eq_uparrow.png) | 0 |  |  |  |  |
-   | ![rising](images/eq_uparrow.png) | 1 |  |  |  |  |
-   | ![rising](images/eq_uparrow.png) | 1 |  |  |  |  |
-   | ![rising](images/eq_uparrow.png) | 1 |  |  |  |  |
-   | ![rising](images/eq_uparrow.png) | 1 |  |  |  |  |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 0 | 0 | 0 | Output did not change |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 0 | 1 | 1 | Output did not change |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 1 | 0 | 1 | Reset |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 1 | 0 | 1 | Reset |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 0 | 1 | 0 | Set |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 0 | 1 | 0 | Set |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 1 | 1 | 0 | Toogle |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 1 | 0 | 1 | Toogle |
 
    **T-type FF**
    | **clk** | **t** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](images/eq_uparrow.png) | 0 | 0 | 0 | Output did not change |
-   | ![rising](images/eq_uparrow.png) | 0 | 1 |  |  |
-   | ![rising](images/eq_uparrow.png) | 1 |  |  |  |
-   | ![rising](images/eq_uparrow.png) | 1 |  |  |  |
+   | ![rising](./%C5%A1ipka_de1.png)) | 0 | 0 | 0 | Output did not change |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 1 | 1 | Output did not change |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 0 | 1 | Toogle |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 1 | 0 | Toogle |
 
 <a name="part1"></a>
+
 ### D & T Flip-flops
 
 1. Screenshot with simulated time waveforms. Try to simulate both D- and T-type flip-flops in a single testbench with a maximum duration of 200 ns, including reset. Always display all inputs and outputs (display the inputs at the top of the image, the outputs below them) at the appropriate time scale!
