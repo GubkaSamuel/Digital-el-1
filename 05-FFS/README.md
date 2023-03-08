@@ -17,14 +17,14 @@
    **JK-type FF**
    | **clk** | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](./%C5%A1ipka_de1.png) | 0 | 0 | 0 | 0 | Output did not change |
-   | ![rising](./%C5%A1ipka_de1.png) | 0 | 0 | 1 | 1 | Output did not change |
-   | ![rising](./%C5%A1ipka_de1.png) | 0 | 1 | 0 | 1 | Reset |
-   | ![rising](./%C5%A1ipka_de1.png) | 0 | 1 | 0 | 1 | Reset |
-   | ![rising](./%C5%A1ipka_de1.png) | 1 | 0 | 1 | 0 | Set |
-   | ![rising](./%C5%A1ipka_de1.png) | 1 | 0 | 1 | 0 | Set |
-   | ![rising](./%C5%A1ipka_de1.png) | 1 | 1 | 1 | 0 | Toogle |
-   | ![rising](./%C5%A1ipka_de1.png) | 1 | 1 | 0 | 1 | Toogle |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 0 | 0 | 1 | Output did not change |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 0 | 1 | 0 | Output did not change |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 1 | 0 | 0 | Reset |
+   | ![rising](./%C5%A1ipka_de1.png) | 0 | 1 | 0 | 0 | Reset |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 0 | 1 | 1 | Set |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 0 | 1 | 1 | Set |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 1 | 1 | 1 | Toogle |
+   | ![rising](./%C5%A1ipka_de1.png) | 1 | 1 | 0 | 0 | Toogle |
 
    **T-type FF**
    | **clk** | **t** | **q(n)** | **q(n+1)** | **Comments** |
