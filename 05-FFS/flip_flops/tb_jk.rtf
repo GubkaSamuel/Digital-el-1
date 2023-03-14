@@ -1,0 +1,132 @@
+{\rtf1\ansi\ansicpg1250\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 ----------------------------------------------------------------------------------\
+-- Company: \
+-- Engineer: \
+-- \
+-- Create Date: 03/08/2023 11:32:06 AM\
+-- Design Name: \
+-- Module Name: tb_ff_rst - Behavioral\
+-- Project Name: \
+-- Target Devices: \
+-- Tool Versions: \
+-- Description: \
+-- \
+-- Dependencies: \
+-- \
+-- Revision:\
+-- Revision 0.01 - File Created\
+-- Additional Comments:\
+-- \
+----------------------------------------------------------------------------------\
+\
+\
+library IEEE;\
+use IEEE.STD_LOGIC_1164.ALL;\
+\
+-- Uncomment the following library declaration if using\
+-- arithmetic functions with Signed or Unsigned values\
+--use IEEE.NUMERIC_STD.ALL;\
+\
+-- Uncomment the following library declaration if instantiating\
+-- any Xilinx leaf cells in this code.\
+--library UNISIM;\
+--use UNISIM.VComponents.all;\
+\
+entity tb_ff_rst is\
+--  Port ( );\
+end tb_ff_rst;\
+\
+architecture testbench of tb_ff_rst is\
+\
+    constant c_CLK_100MHZ_PERIOD : time := 10 ns;\
+\
+    --Local signals\
+    signal sig_clk_100MHz : std_logic;\
+    signal sig_rst        : std_logic;\
+    signal sig_data       : std_logic;\
+    signal sig_data1      : std_logic;\
+    --signal sig_dq         : std_logic;\
+    --signal sig_dq_bar     : std_logic;\
+    --signal sig_tq         : std_logic;\
+    --signal sig_tq_bar     : std_logic;\
+	signal sig_jq         : std_logic;\
+    signal sig_jq_bar     : std_logic;\
+   \
+begin\
+	uut_jk_ff_rst : entity work.jk_ff_rst\
+        port map (\
+            clk   => sig_clk_100MHz,\
+            rst   => sig_rst,\
+            j     => sig_data,\
+            q     => sig_jq,\
+            q_bar => sig_jq_bar,\
+            k     => sig_data1\
+        );\
+    --------------------------------------------------------\
+    -- Clock generation process\
+    --------------------------------------------------------\
+    p_clk_gen : process\
+    begin\
+        while now < 300 ns loop -- 30 periods of 100MHz clock\
+            sig_clk_100MHz <= '0';\
+            wait for c_CLK_100MHZ_PERIOD / 2;\
+            sig_clk_100MHz <= '1';\
+            wait for c_CLK_100MHZ_PERIOD / 2;\
+        end loop;\
+        wait;                -- Process is suspended forever\
+    end process p_clk_gen;\
+\
+    --------------------------------------------------------\
+    -- Reset generation process\
+    --------------------------------------------------------\
+    p_reset_gen : process\
+    begin\
+        sig_rst <= '0';\
+        wait for 50 ns;\
+        sig_rst <= '1';\
+        wait for 101 ns;\
+        sig_rst <= '0';\
+        wait;\
+    end process p_reset_gen;\
+\
+    --------------------------------------------------------\
+    -- Data generation process\
+    --------------------------------------------------------\
+    p_stimulus : process\
+    begin\
+        report "Stimulus process started";\
+        sig_data <='0'; wait for 13 ns;\
+        sig_data <='1'; wait for 30 ns;\
+        sig_data <='0'; wait for 23 ns;\
+        sig_data <='1'; wait for 39 ns;\
+        sig_data <='0'; wait for 49 ns;\
+        sig_data <='1'; wait for 23 ns;\
+        sig_data <='0';\
+        \
+         wait;\
+    end process p_stimulus;\
+     p_jk : process\
+     begin\
+        sig_data1 <='0'; wait for 12 ns;\
+        sig_data1 <='1'; wait for 32 ns;\
+        sig_data1 <='0'; wait for 25 ns;\
+        sig_data1 <='1'; wait for 37 ns;\
+        sig_data1 <='0'; wait for 60 ns;\
+        sig_data1 <='1'; wait for 30 ns;\
+        sig_data1 <='0';\
+\
+        -- DEFINE YOUR INPUT DATA HERE\
+\
+        report "Stimulus process finished";\
+        wait;\
+     end process p_jk;   \
+        \
+       \
+\
+end architecture testbench;}
