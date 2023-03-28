@@ -19,20 +19,26 @@
                 dp      <= dp_vect(0);
                 dig     <= "1110";
             else
-                case sig_cnt is
+               case sig_cnt is
                     when "11" =>
                         sig_hex <= data3;
                         dp      <= dp_vect(3);
                         dig     <= "0111";
 
                     when "10" =>
-                        -- DEFINE ALL OUTPUTS FOR "10" HERE
+                        sig_hex <= data2;
+                        dp      <= dp_vect(2);
+                        dig     <= "1011";
 
                     when "01" =>
-                        -- DEFINE ALL OUTPUTS FOR "01" HERE
+                        sig_hex <= data1;
+                        dp      <= dp_vect(1);
+                        dig     <= "1101";
 
                     when others =>
-                        -- DEFINE ALL OUTPUTS FOR "00" HERE
+                        sig_hex <= data0;
+                        dp      <= dp_vect(0);
+                        dig     <= "1110";
                 end case;
             end if;
         end if;
@@ -43,4 +49,4 @@
 
 1. Image of the 8-digit driver's block schematic. The image can be drawn on a computer or by hand. Always name all inputs, outputs, components, and internal signals!
 
-   ![your figure]()
+   ![your figure](screen1.png)
